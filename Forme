@@ -1,0 +1,100 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame1 = Instance.new("Frame")
+local Frame2 = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local TextButton2 = Instance.new("TextButton")
+local TextButton3 = Instance.new("TextButton")
+local TextButton4 = Instance.new("TextButton")
+local ScrollingFrame1 = Instance.new("ScrollingFrame")
+local TextLabel1 = Instance.new("TextLabel")
+
+--Properties
+ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame1.Parent = ScreenGui
+Frame1.Position = UDim2.new(0.116, 0,0.15, 0)
+Frame1.Size = UDim2.new(0,60,0,60)
+Frame1.Style = Enum.FrameStyle.RobloxRound
+
+Frame2.Parent = ScreenGui
+Frame2.Size = UDim2.new(0.296, 0,0.208, 0)
+Frame2.Position = UDim2.new(0,296,0,208)
+Frame2.Style = Enum.FrameStyle.RobloxRound
+Frame2.Visible = false
+
+ScrollingFrame1.Parent = Frame2
+ScrollingFrame1.BackgroundTransparency = 1
+ScrollingFrame1.Position = UDim2.new(0.033,0,0.299,0)
+ScrollingFrame1.Size = UDim2.new(0,231,0,135)
+
+TextLabel1.Parent = Frame2
+TextLabel1.BackgroundTransparency = 1
+TextLabel1.Position = UDim2.new(0.031,0,0.038,0)
+TextLabel1.Size = UDim2.new(0,231,0,50)
+TextLabel1.Font = Enum.Font.SciFi
+TextLabel1.Text = "Functions"
+TextLabel1.TextScaled = true
+TextLabel1.TextWrapped = true
+TextLabel1.TextColor3 = Color3.fromRGB(57,163,255)
+
+TextButton.Parent = Frame1
+TextButton.Position = UDim2.new(-0.167,0,-0.167,0)
+TextButton.Size = UDim2.new(0,60,0,60)
+TextButton.BackgroundTransparency = 1
+TextButton.Font = Enum.Font.RobotoMono
+TextButton.Text = "Open Gui"
+TextButton.TextColor3 = Color3.fromRGB(57,163,255)
+TextButton.TextScaled = true
+TextButton.TextWrapped = true
+
+TextButton2.Parent = Frame2
+TextButton2.Size = UDim2.new(0,209,0,50)
+TextButton2.Position = UDim2.new(0,0,0,0)
+TextButton2.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+TextButton2.BackgroundColor3 = Color3.fromRGB(21,59,141)
+TextButton2.Text = "Something"
+TextButton2.TextScaled = true
+TextButton2.TextWrapped = true
+
+TextButton3.Parent = Frame2
+TextButton3.Size = UDim2.new(0,209,0,50)
+TextButton3.Position = UDim2.new(0,0,0.120,0)
+TextButton3.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+TextButton3.BackgroundColor3 = Color3.fromRGB(21,59,141)
+TextButton3.Text = "Something"
+TextButton3.TextScaled = true
+TextButton3.TextWrapped = true
+
+TextButton4.Parent = Frame2
+TextButton4.Size = UDim2.new(0,209,0,50)
+TextButton4.Position = UDim2.new(0,0,0.240,0)
+TextButton4.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+TextButton4.BackgroundColor3 = Color3.fromRGB(21,59,141)
+TextButton4.Text = "Something"
+TextButton4.TextScaled = true
+TextButton4.TextWrapped = true
+
+
+
+
+
+
+
+--Script 
+
+guiOpen = false
+
+
+TextButton.MouseButton1Click:Connect( function() 
+	if guiOpen == false then
+		guiOpen = true
+		Frame2.Visible = true
+		TextButton.Text = "Close Gui"
+	else
+		guiOpen = false
+		Frame2.Visible = false
+		TextButton.Text = "Open Gui"
+	end
+	
+end)
